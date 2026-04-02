@@ -1,0 +1,132 @@
+/* Modern Dark Mode for Tip Calculator - White Text Version */
+
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e;
+    --accent-blue: #00d4ff;
+    --accent-green: #00ff88;
+    --accent-red: #ff4d4d;
+    --text-primary: #ffffff; /* Letras puramente brancas */
+    --text-secondary: #cccccc; /* Cinza claro para textos secundários */
+    --border-color: #333333;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+/* Footer styling */
+footer {
+    background-color: #1a1a1a;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: #1a1a1a !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.navbar-brand {
+    color: #ffffff !important; /* Marca em branco */
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* Card styling */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    color: #ffffff; /* Garante texto branco dentro dos cards */
+}
+
+/* Classification highlights */
+.alert {
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.alert-danger {
+    border-left: 4px solid var(--accent-red);
+}
+.alert-danger h2, .alert-danger p {
+    color: #ffffff; /* Texto branco mesmo em alertas */
+}
+
+.alert-info {
+    border-left: 4px solid var(--accent-blue);
+}
+.alert-info h2, .alert-info p {
+    color: #ffffff;
+}
+
+.alert-success {
+    border-left: 4px solid var(--accent-green);
+}
+.alert-success h2, .alert-success p {
+    color: #ffffff;
+}
+
+/* Card header styling */
+.card-header {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ffffff; /* Título do card em branco */
+}
+
+/* Form controls for dark mode */
+.form-control, .form-select {
+    background-color: #2a2a2a;
+    border: 1px solid var(--border-color);
+    color: #ffffff; /* Texto digitado em branco */
+}
+
+.form-control::placeholder {
+    color: #888888;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #2a2a2a;
+    border-color: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(0, 212, 255, 0.25);
+}
+
+/* Labels and other text elements */
+label, .form-label {
+    color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #ffffff;
+    }
+    
+    .card {
+        margin: 10px;
+    }
+}
