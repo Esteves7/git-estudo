@@ -191,3 +191,9 @@ projeto-web/
 ```
 
 python -m venv venv - adicionando o venv
+
+
+
+testando o commit 
+
+
