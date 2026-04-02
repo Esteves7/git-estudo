@@ -1,1 +1,193 @@
-Flask==3.0.3
+# 🚀 Setup Completo Python + Flask + Git (Windows)
+
+## 🐍 1. Criar e configurar ambiente virtual
+
+```bash
+# Criar ambiente virtual
+python -m venv venv
+
+# Ativar ambiente (Windows)
+venv\Scripts\activate
+
+# Atualizar pip (opcional)
+python -m pip install --upgrade pip
+
+# Instalar Flask
+pip install flask
+
+# Criar arquivo de dependências (manual)
+echo flask > requirements.txt
+```
+
+---
+
+## ▶️ 2. Criar aplicação Flask
+
+Crie um arquivo chamado `app.py`:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Funcionando 🚀"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Rodar o projeto:
+
+```bash
+python app.py
+```
+
+Acesse no navegador:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 📁 3 .gitignore
+
+```bash
+# Ambiente virtual — nunca versionar
+venv/
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+
+# Configurações locais do VS Code
+.vscode/
+
+# Variáveis de ambiente sensíveis (senhas, chaves)
+.env
+```
+
+## 🧠 4. Configurar Git (MÁQUINA COMPARTILHADA)
+
+```bash
+# Iniciar repositório
+git init
+
+# Configurar usuário SOMENTE neste projeto
+git config user.name "Seu Nome"
+git config user.email "seu@email.com"
+
+# Conectar com repositório remoto
+git remote add origin https://github.com/seu-user/seu-repo.git
+
+# Primeiro commit
+git add .
+git commit -m "primeiro commit"
+
+# Enviar para o GitHub
+git push -u origin main
+```
+
+---
+
+```bash
+# adicionar o repositório remoto (troque pela URL do seu GitHub)
+git remote add origin https://github.com/seu-user/seu-repo.git
+
+# renomear a branch de master para main (padrão atual)
+git branch -M main
+
+# enviar o projeto para o GitHub e criar vínculo (upstream)
+git push -u origin main
+```
+
+# 📌 Depois disso
+
+# você pode usar apenas:
+
+git push
+
+```
+```
+
+
+
+
+## ⚡ RESUMO RÁPIDO
+
+## Inicio de tudo 
+git clone https://github.com/Esteves7/git-estudo.git
+cd git-estudo
+code .
+
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install flask
+echo flask > requirements.txt
+
+## Inicia o repositório
+
+git init
+git config user.name "Seu Nome"
+git config user.email "Seu Email"
+
+## 
+git add .
+git commit -m "init"
+git push
+```
+from flask import Flask, render_template, request, redirect, url_for, flash
+
+app = Flask(__name__)
+app.secret_key = 'segredo'
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        # pegar dados do form
+        conta = request.form['conta']
+        pessoas = request.form['pessoas']
+        gorjeta = request.form['gorjeta']
+
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True) app.py
+
+---
+
+## ✅ Resultado esperado
+
+* Ambiente virtual ativo `(venv)`
+* Flask rodando
+* Projeto versionado no Git
+* Código salvo no GitHub com segurança
+
+---
+Caso já tenha subido o projeto e quer subir 
+as alteraçoes, não esqueça os commit -m e 
+o git add . para subir tudo que você 
+atualizou.
+
+
+projeto-web/
+│
+├── app.py                  ← arquivo principal: inicia o servidor Flask
+├── requirements.txt        ← lista de dependências
+├── .gitignore              ← arquivos que o Git deve ignorar
+├── venv/                   ← ambiente virtual (ignorado pelo Git)
+│
+├── templates/              ← arquivos HTML (as Views do MVC)
+│   └── index.html
+│
+└── static/                 ← arquivos estáticos (CSS, JS, imagens)
+    ├── css/
+    ├── js/
+    └── imgs/
+```
+
+python -m venv venv - adicionando o venv
