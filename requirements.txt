@@ -194,6 +194,165 @@ python -m venv venv - adicionando o venv
 
 
 
-testando o commit eeee
+
+Mais anotações -V-
+
+
+---
+
+## 1. Ambiente Virtual
+
+```bash
+# Criar o ambiente virtual
+python -m venv venv
+
+# Ativar (Windows)
+venv\Scripts\activate
+
+# Instalar Flask
+pip install flask
+
+# Salvar dependências
+echo flask > requirements.txt
+```
+
+> O ambiente virtual isola as dependências do projeto.
+> Sempre ative antes de rodar ou instalar qualquer coisa.
+
+---
+
+## 2. Criar a Aplicação Flask
+
+Crie o arquivo `app.py`:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Funcionando 🚀"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+Rodar:
+
+```bash
+python app.py
+```
+
+Acessar no navegador:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 3. Arquivo .gitignore
+
+Crie o arquivo `.gitignore` na raiz do projeto:
+
+```
+venv/           # ambiente virtual — nunca versionar
+__pycache__/    # cache do Python
+*.pyc           # bytecode compilado
+.vscode/        # configurações locais do editor
+.env            # variáveis de ambiente (senhas, chaves)
+```
+
+---
+Primeira coisa a se fazer depois de criar pasta e estar dentro dela
+
+## 4. Configurar Git (Máquina Compartilhada)
+
+```bash
+# Iniciar repositório
+git init
+
+# Configurar usuário SOMENTE neste projeto (sem --global)
+git config user.name "Seu Nome"
+git config user.email "seu@email.com"
+
+# Conectar ao repositório remoto
+git remote add origin https://github.com/seu-user/seu-repo.git
+
+# Renomear branch para main (padrão atual do GitHub)
+git branch -M main
+
+# Adicionar todos os arquivos ao stage
+git add .
+
+# Criar o primeiro commit
+git commit -m "primeiro commit"
+
+# Enviar para o GitHub e criar vínculo (upstream)
+git push -u origin main
+```
+
+> A partir do segundo push, basta usar:
+> ```bash
+> git push
+> ```
+
+---
+
+## 5. Estrutura de Pastas
+
+```
+projeto/
+│
+├── app.py              ← arquivo principal (inicia o servidor Flask)
+├── requirements.txt    ← lista de dependências
+├── .gitignore          ← arquivos que o Git deve ignorar
+├── venv/               ← ambiente virtual (ignorado pelo Git)
+│
+├── templates/          ← arquivos HTML (Views)
+│   └── index.html
+│
+└── static/             ← arquivos estáticos
+    ├── css/
+    ├── js/
+    └── imgs/
+```
+
+---
+
+## Resumo Rápido — Sequência do Zero
+
+```bash
+# 1. Criar e ativar venv
+python -m venv venv
+venv\Scripts\activate
+
+# 2. Instalar Flask e salvar deps
+pip install flask
+echo flask > requirements.txt
+
+# 3. Criar app.py (veja seção 2)
+
+# 4. Criar .gitignore (veja seção 3)
+
+# 5. Subir para o GitHub
+git init
+git config user.name "Seu Nome"
+git config user.email "seu@email.com"
+git remote add origin https://github.com/seu-user/seu-repo.git
+git branch -M main
+git add .
+git commit -m "init"
+git push -u origin main
+```
+
+---
+
+## Resultado Esperado
+
+- `(venv)` aparece no terminal → ambiente ativo
+- Flask rodando em `http://127.0.0.1:5000/`
+- Projeto versionado e salvo no GitHub
 
 
